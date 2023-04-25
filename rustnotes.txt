@@ -1,0 +1,53 @@
+if it ends in an exclamation point, it is a rust macro. eg. println!("Hello, world!");
+
+toml = Toms Obvious Minimal Language
+
+
+CARGO
+-----
+cargo:
+1. Go to directory where you want to create it
+2. type "cargo new newprojectwithnospaces"
+3. To build, "cargo build" in directory newprojectwithnospaces
+4. To run, "cargo run" in directory newprojectwithnospaces
+*. "cargo check" = checks to see if it compiles, but does not create executable
+
+rustfmt: Will autoformat your rs file
+in src/ , type rustfmt filename.rs
+
+*You always need a main.rs file in src/ , and it must have a main function defined. This is where your program will always start from.
+
+
+VARIABLES
+---------
+let x = 4; //Implicit type assignment
+let y: u32 = 5; //explicit type declaration
+let mut z = 10; //variables can only be changed if explicitly declared as mutable
+
+nameshadowing: when you use a similar name but in a different scope
+you can also use nameshadowing to use var with same name from a previous scope if you reference it in current scope
+
+eg1/
+let x = 4;
+{
+let x = 2;//x is 2 only in this scope
+}
+//x = 4 in the end
+
+eg2/
+let x = 4;
+{
+let x = x - 2;//x is 2 because it uses x from previous scope
+}
+//x = 4 in the end
+
+when you redeclare a var, you can change its type, as long as it isnt a mut var. This is because you aren't actually changing the var, you are creating a new one.
+
+eg1/
+let x = 4;
+let x = "hello";
+//x is hello in the end
+
+*constants cannot be changed throughout the entirety of the program. Their type must be declared explicitly. You cannot redefine it. They are also typically typed in all caps.:
+
+const SECONDS_IN_MINUTE: u32 = 60;
